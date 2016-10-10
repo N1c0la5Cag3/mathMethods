@@ -35,8 +35,9 @@ public class mathMethodsGUI extends javax.swing.JFrame {
         otherButton = new javax.swing.JButton();
         anotherButton = new javax.swing.JButton();
         yetAnotherButton = new javax.swing.JButton();
-        couldItReallyBeAFifthbutton = new javax.swing.JButton();
-        not_button = new javax.swing.JTextField();
+        couldItReallyBeAFifthButton = new javax.swing.JButton();
+        notButton = new javax.swing.JTextField();
+        alsoNotButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,12 +69,14 @@ public class mathMethodsGUI extends javax.swing.JFrame {
             }
         });
 
-        couldItReallyBeAFifthbutton.setText("round");
-        couldItReallyBeAFifthbutton.addActionListener(new java.awt.event.ActionListener() {
+        couldItReallyBeAFifthButton.setText("round");
+        couldItReallyBeAFifthButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                couldItReallyBeAFifthbuttonActionPerformed(evt);
+                couldItReallyBeAFifthButtonActionPerformed(evt);
             }
         });
+
+        alsoNotButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,17 +96,20 @@ public class mathMethodsGUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(yetAnotherButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(couldItReallyBeAFifthbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(couldItReallyBeAFifthButton, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addComponent(not_button, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(notButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(alsoNotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(not_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(notButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -112,61 +118,100 @@ public class mathMethodsGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(yetAnotherButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(couldItReallyBeAFifthbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(94, Short.MAX_VALUE))
+                    .addComponent(couldItReallyBeAFifthButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(alsoNotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /** 
+     * This method will take the numerical input given by a user in the 
+     * "notButton" text field, then find it's sine ratio
+     * For this method to be run, the user must give a numerical input, and 
+     * press "button" (the button labeled with sin)
+     * When this method is properly complete, it will display the sine ratio of
+     * the given number in the "alsoNotButton" output box
+     * @param evt 
+     */
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
-        // SIN
-        double num = Double.parseDouble(not_button.getText());
-        System.out.println(num);
+        double num = Double.parseDouble(notButton.getText());
         
         num = Math.toRadians(num);
-        System.out.println("WHOA " + num);
         
         num = Math.sin(num);
-        System.out.println(num);
+        alsoNotButton.setText("" + num);
     }//GEN-LAST:event_buttonActionPerformed
 
+    /** 
+     * This method will take the numerical input given by a user in the 
+     * "notButton" text field, then find it's cosine ratio
+     * For this method to be run, the user must give a numerical input, and 
+     * press "otherButton" (the button labeled with cos)
+     * When this method is properly complete, it will display the cosine ratio 
+     * of the given number in the "alsoNotButton" output box
+     * @param evt 
+     */
     private void otherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otherButtonActionPerformed
-        // COS      
-        double num = Double.parseDouble(not_button.getText());
+        double num = Double.parseDouble(notButton.getText());
         
         num = Math.toRadians(num);
         
         num = Math.cos (num);
-        System.out.println(num);
+        alsoNotButton.setText("" + num);
     }//GEN-LAST:event_otherButtonActionPerformed
 
+    /** 
+     * This method will take the numerical input given by a user in the 
+     * "notButton" text field, then find it's tangent ratio
+     * For this method to be run, the user must give a numerical input, and 
+     * press "anotherButton" (the button labeled with tan)
+     * When this method is properly complete, it will display the tangent ratio 
+     * of the given number in the "alsoNotButton" output box
+     * @param evt 
+     */
     private void anotherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anotherButtonActionPerformed
-        // TAN
-        double num = Double.parseDouble(not_button.getText());
+        double num = Double.parseDouble(notButton.getText());
         
         num = Math.toRadians(num);
         
         num = Math.tan(num);
-        System.out.println(num);
+        alsoNotButton.setText("" + num);
     }//GEN-LAST:event_anotherButtonActionPerformed
 
+    /** 
+     * This method will take the numerical input given by a user in the 
+     * "notButton" text field, then find it's square root
+     * For this method to be run, the user must give a numerical input, and 
+     * press "yetAnotherButton" (the button labeled with √)
+     * When this method is properly complete, it will display the square root of
+     * the given number in the "alsoNotButton" output box
+     * @param evt 
+     */
     private void yetAnotherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yetAnotherButtonActionPerformed
-        // SQRT
-        double num = Double.parseDouble(not_button.getText());
+        double num = Double.parseDouble(notButton.getText());
         
         num = Math.sqrt(num);
-        System.out.println(num);
+        alsoNotButton.setText("" + num);
     }//GEN-LAST:event_yetAnotherButtonActionPerformed
 
-    private void couldItReallyBeAFifthbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_couldItReallyBeAFifthbuttonActionPerformed
-        // ROUND
-        double num = Double.parseDouble(not_button.getText());
-        System.out.println(num);
+    /** 
+     * This method will take the numerical input given by a user in the 
+     * "notButton" text field, then round it to the nearest whole number
+     * For this method to be run, the user must give a numerical input, and 
+     * press "couldItReallyBeAFifthButton" (the button labeled with "round")
+     * When this method is properly complete, it will display the given number
+     * rounded to the nearest whole number in the "alsoNotButton" output box
+     * @param evt 
+     */
+    private void couldItReallyBeAFifthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_couldItReallyBeAFifthButtonActionPerformed
+        double num = Double.parseDouble(notButton.getText());
         
         num = Math.round(num);
-        System.out.println(num);
-    }//GEN-LAST:event_couldItReallyBeAFifthbuttonActionPerformed
+        alsoNotButton.setText("" + num);
+    }//GEN-LAST:event_couldItReallyBeAFifthButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,10 +249,11 @@ public class mathMethodsGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alsoNotButton;
     private javax.swing.JButton anotherButton;
     private javax.swing.JButton button;
-    private javax.swing.JButton couldItReallyBeAFifthbutton;
-    private javax.swing.JTextField not_button;
+    private javax.swing.JButton couldItReallyBeAFifthButton;
+    private javax.swing.JTextField notButton;
     private javax.swing.JButton otherButton;
     private javax.swing.JButton yetAnotherButton;
     // End of variables declaration//GEN-END:variables

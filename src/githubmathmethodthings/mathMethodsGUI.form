@@ -35,16 +35,20 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="anotherButton" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="yetAnotherButton" min="-2" pref="260" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="couldItReallyBeAFifthbutton" min="-2" pref="256" max="-2" attributes="0"/>
+                              <Component id="couldItReallyBeAFifthButton" min="-2" pref="256" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                      <Component id="not_button" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="notButton" min="-2" pref="200" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                      <Component id="alsoNotButton" min="-2" pref="267" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -55,7 +59,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-              <Component id="not_button" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="notButton" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="button" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
@@ -65,9 +69,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="yetAnotherButton" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                  <Component id="couldItReallyBeAFifthbutton" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="couldItReallyBeAFifthButton" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="94" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="alsoNotButton" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,15 +111,22 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yetAnotherButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="couldItReallyBeAFifthbutton">
+    <Component class="javax.swing.JButton" name="couldItReallyBeAFifthButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="round"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="couldItReallyBeAFifthbuttonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="couldItReallyBeAFifthButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="not_button">
+    <Component class="javax.swing.JTextField" name="notButton">
+    </Component>
+    <Component class="javax.swing.JLabel" name="alsoNotButton">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
